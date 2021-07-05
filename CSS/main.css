@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Shadows+Into+Light&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+ 
+}
+
+html{
+  --a-color:white;
+  --moon-color:#fdd300;
+  --day-color:#A3D4F5;
+  --hover-color:#A487E8;
+  --player-color:rgb(56, 55, 55);
+  --bg-color:white;
+  --btn-color:#9CCD7A;
+  --bod-color:rgb(56, 55, 55);
+  --heading-color:#2A2A28;
+  --p1-color:#E96E35;
+  --p2-color:#9BA1BF;
+  --board-color:#FFF9EB;
+  --one-color:#E7EFED;
+  --c-color:#353831;
+  --winner-color:#F8D112;
+  --status-color:#fdd300;
+  --slider-color:rgb(199, 198, 198);
+}
+
+html[data-theme="dark"]{
+  --a-color:white;
+    --moon-color:#fdd300;
+    --day-color:#A3D4F5;
+  --hover-color:#A487E8;
+  --player-color:white;
+  --bg-color:#121212;
+  --btn-color:#9CCD7A;
+  --bod-color:white;
+  --heading-color:#2A2A28;
+  --p1-color:#E96E35;
+  --p2-color:#9BA1BF;
+  --board-color:#FFF9EB;
+  --one-color:#E7EFED;
+  --c-color:#353831;
+  --winner-color:#F8D112;
+  --status-color:#fdd300;
+  --slider-color:rgb(199, 198, 198);
+}
+ 
+
+
+
+.wrapper{
+  max-width: 100%;
+  height:100vh;
+  background-color: var(--bg-color);
+  display: flex;
+  justify-content:space-between;
+  align-items:center;
+  margin: auto;
+  padding: 0 90px;
+}
+
+
+.button{
+  transition: all 250ms ease-in;
+  cursor: pointer;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height:50px;
+  width:190px;
+  background-color: var(--btn-color);
+  margin-top: 40px;
+  border-radius:28px;
+  padding:8px;
+  border: 3px solid var(--a-color);
+  transition: all 250ms ease-in;
+}
+.button:hover{
+  background-color:var(--hover-color);
+  border-color:var(--bod-color);
+}
+
+.header{
+  font-family: 'Caveat',
+  cursive;
+  font-size:78px;
+  color: var(--bod-color);
+  letter-spacing: 1.2px;
+}
+
+.head{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.player-1 , .player-2 {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex:1;
+  height: 42px;
+  width: 150px;
+  transition: all 250ms ease-in;
+  padding-bottom:8px;
+  cursor: pointer;
+}
+
+.player-1.active{
+   
+    border-bottom: 3px solid var(--p1-color);
+     transition: all 250ms ease-in;
+    color: var(--b-color);
+}
+.player-2.active{
+   border-bottom: 3px solid var(--p1-color);
+    transition: all 250ms ease-in;
+}
+
+.imp {
+   font-family: 'Caveat',
+   cursive; 
+  letter-spacing: 1.3px;
+  color: var(--player-color);
+  font-size:30px;
+}
+
+.game{
+  width: 500px;
+  height:600px;
+  display: flex;
+  flex-direction:column ;
+  
+}
+.board{
+  margin-top:50px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3,1fr);
+  flex-grow: 1;
+  background-color: var(--board-color);
+  padding: 1px;
+  border: 8px solid var(--a-color);
+  margin-bottom: 24px;;
+}
+
+.one {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 80px;
+  cursor: pointer;
+}
+.one:hover{
+  background-color: var(--one-color);
+}
+
+.one:not(:nth-child(3n)) {
+  border-right: 2px solid var(--c-color);
+}
+
+.one:not(:nth-last-child(-n+3)) {
+  border-bottom: 2px solid var(--c-color);
+}
+.tile-x{
+  color: var(--p1-color);
+}
+
+.tile-o {
+  color: var(--p2-color);
+}
+
+.winner span {
+  color: var(--winner-color);
+}
+
+
+@media (max-width: 1200px)
+{
+  .wrapper {
+    flex-direction: column;
+  }
+  .left-layout{
+    display: flex;
+    margin-top: 28px;;
+  }
+  .header{
+    
+    font-size: 40px; 
+    padding-right: 48px;
+  }
+  .button{
+    width: 140px;
+    height:40px;
+  }
+
+  .game{
+    
+    height:400px;
+    width: 400px;
+ 
+  }
+
+  .head{
+    margin-top: -40px;
+    }
+
+    .player-1 , .player-2{
+      width:110px;
+      height:36px;
+    }
+}
+
+.game--status{
+
+  font-family: 'Shadows Into Light',
+  cursive;
+  color:var(--status-color);
+  letter-spacing: 2px;
+  font-size: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+
+.svg{
+  position:absolute;
+  margin:auto;
+  width: 500px;
+  height:500px;
+  top: 170px;
+  pointer-events: none;
+
+}
+
+.left-layout{
+  position: relative;
+}
+
+.toggle{
+position: absolute;
+top: -200px;
+}
+
+.switch {
+  position: relative;
+  display:block;
+  width:90px;
+  height:55px;
+}
+
+.slider{
+  position: absolute;
+  cursor: pointer;
+  top:0;
+  bottom: 0;
+  right:0;
+  left:0;
+  background-color:var(--a-color);
+  transition: 0.5s;
+  border: 2px solid var(--slider-color);
+  
+}
+
+.slider:before{
+  position:absolute;
+  content:"";
+  bottom:14px;
+  top: 8px;
+  background-color:var(--day-color);
+  transition:0.5s;
+}
+
+.switch input{display: none;}
+
+input:checked + .slider{
+  background-color:var(--b-color);
+}
+
+input:checked + .slider:before{
+  transform: translateX(47px) rotateZ(45deg);
+  background: var(--moon-color);
+}
+
+.round {
+  border-radius:35px;
+}
+
+.round:before {
+  width:43%;
+  height:43%;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  transform: rotateZ(-45deg);
+}
+
+html.transition,
+html.transition *,
+html.transition *:before,
+html.transition *:after {
+  transition: all 750ms !important;
+  transition-delay: 0 !important;
+}

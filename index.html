@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./CSS/main.css" type="text/css" />
+</head>
+<body class>
+
+  <div class="wrapper">
+        <div class="left-layout">
+            <div class="toggle">
+              <label class="switch" >
+                <input type="checkbox" id="myCheck" name="theme" >
+                <span class="slider round"></span>
+              </label>
+            </div>
+          
+
+            <div class="title">
+                <h1 class="header">Let's Play<br> The gameeeee!</h1>
+            </div>
+
+            <div class="button ">
+                <span class='btn'>Start Game</span>
+            </div>
+          
+        </div>
+
+        <div class="right-layout">
+          <div class="game">
+                <div class="head">
+                      <div class="player-1">
+                        <span class="imp">Player-X</span>
+                      </div>
+                      <div class="player-2 ">
+                        <span class="imp">Player-O</span>
+                      </div>
+                </div>
+                <div class="board">
+                        <div class="one" data-index="0"></div>
+                        <div class="one" data-index="1"></div>
+                        <div class="one" data-index="2"></div>
+                        <div class="one" data-index="3"></div>
+                        <div class="one" data-index="4"></div>
+                        <div class="one" data-index="5"></div>
+                        <div class="one" data-index="6"></div>
+                        <div class="one" data-index="7"></div>
+                        <div class="one" data-index="8"></div>           
+                </div>                                  
+                  <h1 class="game--status  inverted">
+                  </h1>
+                  <div class="svg inverted"></div>
+                         
+            </div>
+      </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.11/lottie.min.js"
+    integrity="sha512-jbTBHn1aXqglu6As1bUWxdPYc9b1uMHtreBM30oW3HbNFDS/eO1n+f98l4qcmw2l7CAdjWSbu3wVjm9SKISOaw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="JS/main.js" type="module" ></script>
+
+  <script>
+
+
+ 
+ var checkbox = document.querySelector("input[name=theme]");
+
+
+ checkbox.addEventListener("change", function() {
+ 
+ if (this.checked) {
+  trans(); 
+
+ document.documentElement.setAttribute('data-theme' ,'dark')
+
+ } else {
+  trans(); 
+ document.documentElement.setAttribute('data-theme' ,'light')
+ }
+ });
+
+
+ let trans = () => {
+   document.documentElement.classList.add('transition')
+   window.setTimeout = (() => {
+document.documentElement.classList.remove('transition')
+   },1000)
+ }
+
+
+
+  </script>
+</body>
+</html>
